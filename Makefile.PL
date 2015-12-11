@@ -9,12 +9,11 @@ WriteMakefile(
     VERSION_FROM       => 'lib/Crypt/Affine.pm',
     ABSTRACT_FROM      => 'lib/Crypt/Affine.pm',
     LICENSE            => 'artistic_2',
-    PL_FILES           => {},
     MIN_PERL_VERSION   => 5.006,
     CONFIGURE_REQUIRES => {
         'ExtUtils::MakeMaker' => 0,
     },
-    BUILD_REQUIRES => {
+    BUILD_REQUIRES   => {
         'Test::More' => 0,
     },
     PREREQ_PM => {
@@ -29,8 +28,8 @@ WriteMakefile(
         resources => {
             repository => {
                 type => 'git',
-                url  => 'https://github.com/Manwar/Crypt-Affine.git',
-                web  => 'https://github.com/Manwar/Crypt-Affine',
+                url  => 'https://github.com/manwar/Crypt-Affine.git',
+                web  => 'https://github.com/manwar/Crypt-Affine',
             },
         }})
      : ()

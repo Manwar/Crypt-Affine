@@ -1,6 +1,6 @@
 package Crypt::Affine::Params;
 
-$Crypt::Affile::Params::VERSION = '0.07';
+$Crypt::Affile::Params::VERSION = '0.08';
 
 =head1 NAME
 
@@ -8,7 +8,7 @@ Crypt::Affine::Params - Placeholder for parameters for Crypt::Affine.
 
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =cut
 
@@ -37,7 +37,7 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 
 =head1 REPOSITORY
 
-L<https://github.com/Manwar/Crypt-Affine>
+L<https://github.com/manwar/Crypt-Affine>
 
 =head1 BUGS
 

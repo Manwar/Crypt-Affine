@@ -1,6 +1,6 @@
 package Crypt::Affine;
 
-$Crypt::Affile::VERSION = '0.07';
+$Crypt::Affile::VERSION = '0.08';
 
 =head1 NAME
 
@@ -8,7 +8,7 @@ Crypt::Affine - Interface to the Affine cipher.
 
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =cut
 
@@ -145,6 +145,10 @@ sub decrypt {
     return $decrypt;
 }
 
+#
+#
+# PRIVATE METHODS
+
 sub _prepare {
     my ($self) = @_;
 
@@ -239,7 +243,7 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 
 =head1 REPOSITORY
 
-L<https://github.com/Manwar/Crypt-Affine>
+L<https://github.com/manwar/Crypt-Affine>
 
 =head1 BUGS
 
