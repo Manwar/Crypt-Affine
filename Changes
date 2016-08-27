@@ -1,4 +1,8 @@
-Revision history for Crypt-Affine
+Revision history for Crypt::Affine
+
+0.09  2016-08-27T08:20:00+01:00
+      - Updated Copyright year information.
+      - Tidied up unit test script t/00-load.t.
 
 0.08  2015-12-11T10:00:00+01:00
       - Added LICENSE file.

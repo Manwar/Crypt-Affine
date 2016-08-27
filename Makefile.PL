@@ -18,8 +18,8 @@ WriteMakefile(
     },
     PREREQ_PM => {
         'autodie'          => 0,
-        'Moo'              => 0,
-        'namespace::clean' => 0,
+        'Moo'              => '2.000000',
+        'namespace::clean' => '0.24',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Crypt-Affine-*' },
