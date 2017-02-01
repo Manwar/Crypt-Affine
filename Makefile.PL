@@ -25,6 +25,10 @@ WriteMakefile(
     clean => { FILES => 'Crypt-Affine-*' },
     (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
         'meta-spec' => { version => 2 },
+        provides    => {
+            'Crypt::Affine'         => { file => 'lib/Crypt/Affine.pm'       , version => '0.10' },
+            'Crypt::Affine::Params' => { file => 'lib/Crypt/Affine/Params.pm', version => '0.10' },
+        },
         resources => {
             repository => {
                 type => 'git',

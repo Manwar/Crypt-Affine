@@ -1,5 +1,8 @@
 Revision history for Crypt::Affine
 
+0.10  2017-02-01T12:25:00+01:00
+      - Added key 'provides' to the Makefile.PL script.
+
 0.09  2016-08-27T08:20:00+01:00
       - Updated Copyright year information.
       - Tidied up unit test script t/00-load.t.
