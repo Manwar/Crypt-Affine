@@ -1,5 +1,8 @@
 Revision history for Crypt::Affine
 
+0.12  2017-04-14T23:10:00+01:00
+      - Improved type handling.
+
 0.11  2017-02-15T12:50:00+01:00
       - Added test scripts (t/meta-json.t and t/meta-yml.t).
 

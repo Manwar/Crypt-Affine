@@ -14,16 +14,16 @@ eval { Crypt::Affine->new('m' => 1); };
 like($@, qr/Missing required arguments: r/);
 
 eval { Crypt::Affine->new('r' => -1, 'm' => 1); };
-like($@, qr/isa check for "r" failed/);
+like($@, qr/Positive number only/);
 
 eval { Crypt::Affine->new('m' => -1, 'r' => 1); };
-like($@, qr/isa check for "m" failed/);
+like($@, qr/Positive number only/);
 
 eval { Crypt::Affine->new('m' => 1, 'r' => 1, 'reverse' => -1); };
-like($@, qr/isa check for "reverse" failed/);
+like($@, qr/Only 0 or 1 allowed/);
 
 eval { Crypt::Affine->new('m' => 1, 'r' => 1, 'source' => 'source.txt'); };
-like($@, qr/isa check for "source" failed/);
+like($@, qr/Invalid file path/);
 
 eval { Crypt::Affine->new({ 'r' => 1 }); };
 like($@, qr/Missing required arguments: m/);
@@ -32,13 +32,13 @@ eval { Crypt::Affine->new({'m' => 1}); };
 like($@, qr/Missing required arguments: r/);
 
 eval { Crypt::Affine->new({ 'r' => -1, 'm' => 1 }); };
-like($@, qr/isa check for "r" failed/);
+like($@, qr/Positive number only/);
 
 eval { Crypt::Affine->new({ 'm' => -1, 'r' => 1 }); };
-like($@, qr/isa check for "m" failed/);
+like($@, qr/Positive number only/);
 
 eval { Crypt::Affine->new({ 'm' => 1, 'r' => 1, 'reverse' => -1 }); };
-like($@, qr/isa check for "reverse" failed/);
+like($@, qr/Only 0 or 1 allowed/);
 
 eval { Crypt::Affine->new({ 'm' => 1, 'r' => 1, 'source' => 'source.txt' }); };
-like($@, qr/isa check for "source" failed/);
+like($@, qr/Invalid file path/);

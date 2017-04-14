@@ -1,6 +1,6 @@
 package Crypt::Affine::Params;
 
-$Crypt::Affine::Params::VERSION   = '0.11';
+$Crypt::Affine::Params::VERSION   = '0.12';
 $Crypt::Affine::Params::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ Crypt::Affine::Params - Placeholder for parameters for Crypt::Affine.
 
 =head1 VERSION
 
-Version 0.11
+Version 0.12
 
 =cut
 
@@ -17,20 +17,24 @@ use 5.006;
 use strict; use warnings;
 use Data::Dumper;
 
-use vars qw(@ISA @EXPORT @EXPORT_OK);
+use Type::Library -base, -declare => qw(ZeroOrOne PositiveNum FilePath);
+use Types::Standard qw(Str);
+use Type::Utils;
 
-require Exporter;
-@ISA = qw(Exporter);
-@EXPORT_OK = qw($FilePath $ZeroOrOne $Num);
+declare 'ZeroOrOne',
+    as Str,
+    where   { /^[0|1]$/ },
+    message { "ERROR: Only 0 or 1 allowed." };
 
-our $ZeroOrOne = sub  { die "ERROR: Invalid data found [$_[0]]" unless check_zero_or_one($_[0]); };
-sub check_zero_or_one { return (defined($_[0]) && ($_[0] =~ /^\d$/) && ($_[0] == 0 || $_[0] == 1)); }
+declare 'PositiveNum',
+    as Str,
+    where   { /^\d+$/ },
+    message { "ERROR: Positive number only." };
 
-our $Num = sub { return check_num($_[0]); };
-sub check_num  { die "ERROR: Invalid NUM data type [$_[0]]" unless (defined $_[0] && $_[0] =~ /^\d+$/); }
-
-our $FilePath = sub { die "ERROR: Invalid file path [$_[0]]" unless check_file_path($_[0]); };
-sub check_file_path { return (-f $_[0]) };
+declare 'FilePath',
+    as Str,
+    where   { -f $_[0] },
+    message { "ERROR: Invalid file path." };
 
 =head1 AUTHOR
 

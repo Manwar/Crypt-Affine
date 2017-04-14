@@ -20,14 +20,15 @@ WriteMakefile(
         'autodie'          => 0,
         'Moo'              => '2.000000',
         'namespace::clean' => '0.24',
+        'Type::Tiny'       => '1.000005',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Crypt-Affine-*' },
     (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
         'meta-spec' => { version => 2 },
         provides    => {
-            'Crypt::Affine'         => { file => 'lib/Crypt/Affine.pm'       , version => '0.11' },
-            'Crypt::Affine::Params' => { file => 'lib/Crypt/Affine/Params.pm', version => '0.11' },
+            'Crypt::Affine'         => { file => 'lib/Crypt/Affine.pm'       , version => '0.12' },
+            'Crypt::Affine::Params' => { file => 'lib/Crypt/Affine/Params.pm', version => '0.12' },
         },
         resources => {
             repository => {

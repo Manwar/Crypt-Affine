@@ -1,6 +1,6 @@
 package Crypt::Affine;
 
-$Crypt::Affine::VERSION   = '0.11';
+$Crypt::Affine::VERSION   = '0.12';
 $Crypt::Affine::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,14 +9,14 @@ Crypt::Affine - Interface to the Affine cipher.
 
 =head1 VERSION
 
-Version 0.11
+Version 0.12
 
 =cut
 
 use 5.006;
 use autodie;
 use Data::Dumper;
-use Crypt::Affine::Params qw($Num $FilePath $ZeroOrOne);
+use Crypt::Affine::Params qw(FilePath ZeroOrOne PositiveNum);
 
 use Moo;
 use namespace::clean;
@@ -48,10 +48,10 @@ m (m ^ -1) % l = 1
 
 =cut
 
-has  'm'       => (is => 'ro', isa => $Num,       required => 1 );
-has  'r'       => (is => 'ro', isa => $Num,       required => 1 );
-has  'reverse' => (is => 'ro', isa => $ZeroOrOne, default => sub { return 0; });
-has  'source'  => (is => 'ro', isa => $FilePath);
+has  'm'       => (is => 'ro', isa => PositiveNum, required => 1 );
+has  'r'       => (is => 'ro', isa => PositiveNum, required => 1 );
+has  'reverse' => (is => 'ro', isa => ZeroOrOne,   default  => sub { return 0; });
+has  'source'  => (is => 'ro', isa => FilePath);
 
 =head1 CONSTRUCTOR
 
